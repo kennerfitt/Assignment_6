@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v5
 
       - name: Set up Java
         uses: actions/setup-java@v5
@@ -37,5 +36,4 @@ jobs:
         with:
           name: playwright-videos
           path: videos/
-
 
