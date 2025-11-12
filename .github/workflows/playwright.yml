@@ -27,11 +27,9 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-        working-directory: Assignment_6
 
       - name: Run Playwright tests
         run: xvfb-run -a mvn -B test --no-transfer-progress
-        working-directory: Assignment_6
         env:
           HEADLESS: true
 
@@ -40,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-videos
-          path: Assignment_6/videos/
+          path: videos/
