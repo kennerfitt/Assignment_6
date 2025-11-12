@@ -27,6 +27,8 @@ jobs:
       - name: Run Playwright tests
         run: mvn test
         working-directory: 'Assignment_6'
+        env:
+          HEADLESS: true
 
       - name: Upload test videos
         if: always()
