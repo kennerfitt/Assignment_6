@@ -17,7 +17,9 @@ public class PlaywrightTest {
     @BeforeAll
     static void setupClass() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
+                .setHeadless(true)
+                .setArgs(java.util.List.of("--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage")));
     }
 
     @BeforeEach
