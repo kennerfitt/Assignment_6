@@ -17,9 +17,7 @@ public class PlaywrightTest {
     @BeforeAll
     static void setupClass() {
         playwright = Playwright.create();
-        boolean isCI = System.getenv("CI") != null || System.getenv("HEADLESS") != null;
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-                .setHeadless(isCI));
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
     }
 
     @BeforeEach
